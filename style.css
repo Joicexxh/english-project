@@ -24,8 +24,23 @@ body {
 }
 
 .character-large {
-  max-width: 350px;
-  width: 100%;
+  width: 450px; /* maior no desktop */
+  max-width: 90%; /* garante que não ultrapasse a tela */
+}
+
+/* ================= Responsividade ================= */
+@media (max-width: 1024px) {
+  /* tablets */
+  .character-large {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* smartphones */
+  .side-character {
+    display: none; /* esconde para telas pequenas */
+  }
 }
 
 /* ================= Container ================= */
