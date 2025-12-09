@@ -139,3 +139,32 @@ h1 {
   color: white;
   margin-bottom: 2rem;
   position: relative;
+  footer {
+  margin-top:60px;
+  padding:30px 0;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid #1e2744;
+  background:transparent;
+}
+
+.footer-text {
+  font-size:0.95rem;
+  margin-bottom:12px;
+}
+
+.footer-instagram {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--accent);
+  font-weight:700;
+  text-decoration:none;
+  font-size:1rem;
+  transition:0.25s;
+}
+
+.footer-instagram:hover {
+  transform:translateY(-2px);
+  opacity:0.9;
+}
