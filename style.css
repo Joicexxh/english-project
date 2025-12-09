@@ -1,36 +1,30 @@
-** {
+/* ================= RESET ================= */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
-:root {
-  --accent: #ff3b3b;
-  --dark: #0c1e3e;
-  --dark2: #051b3c;
-  --muted: #b4b9c9;
-  --text-light: #fff;
-}
-
+/* ================= BODY ================= */
 body {
   background: linear-gradient(to bottom, #0c1e3e, #051b3c);
-  color: var(--text-light);
+  color: #fff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
   position: relative;
-  flex-direction: column; /* permite footer no final */
 }
 
-/* ================= Personagem lateral ================= */
+/* ================= PERSONAGEM LATERAL ================= */
 .side-character {
   position: absolute;
   left: -50px;
-  bottom: 150px; /* afasta do footer */
-  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .character-large {
@@ -38,7 +32,7 @@ body {
   width: 100%;
 }
 
-/* ================= Container ================= */
+/* ================= CONTAINER ================= */
 .container {
   max-width: 900px;
   background: rgba(10, 25, 50, 0.95);
@@ -50,19 +44,10 @@ body {
   z-index: 2;
 }
 
-/* ================= Logo ================= */
+/* ================= LOGO ================= */
 .logo-top img {
   max-width: 200px;
   margin-bottom: 2rem;
-}
-
-.logo .x {
-  color: red;
-  font-weight: 900;
-  margin-left: 5px;
-  position: relative;
-  top: -2px;
-  font-size: 1.5rem;
 }
 
 .logo {
@@ -75,7 +60,16 @@ body {
   position: relative;
 }
 
-/* ================= Títulos ================= */
+.logo .x {
+  color: red;
+  font-weight: 900;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
+  font-size: 1.5rem;
+}
+
+/* ================= TÍTULOS ================= */
 h1 {
   font-size: 2.5rem;
   font-weight: 900;
@@ -84,11 +78,11 @@ h1 {
 }
 
 .highlight {
-  color: var(--accent);
+  color: #ff3b3b;
   text-transform: uppercase;
 }
 
-/* ================= Descrição ================= */
+/* ================= DESCRIÇÃO ================= */
 .desc {
   font-size: 1rem;
   color: #ddd;
@@ -99,10 +93,10 @@ h1 {
   line-height: 1.5;
 }
 
-/* ================= Botões ================= */
+/* ================= BOTÕES ================= */
 .btn-red {
   display: inline-block;
-  background: var(--accent);
+  background: #ff3b3b;
   color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
@@ -120,7 +114,7 @@ h1 {
   transform: translateY(-2px);
 }
 
-/* ================= Benefícios ================= */
+/* ================= BENEFÍCIOS ================= */
 .benefits {
   list-style: none;
   margin: 2rem 0;
@@ -143,22 +137,14 @@ h1 {
   fill: #4caf50;
 }
 
-/* ================= Responsividade ================= */
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  .side-character {
-    display: none;
-  }
-}
-
-/* ================= Footer ================= */
+/* ================= FOOTER ================= */
 footer {
   margin-top: 60px;
   padding: 30px 0;
   text-align: center;
-  color: var(--muted);
+  color: #b4b9c9;
   border-top: 1px solid #1e2744;
-  background: var(--dark2);
+  background: rgba(17, 24, 46, 0.9);
   width: 100%;
   clear: both;
   position: relative;
@@ -174,7 +160,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent);
+  color: #e63946;
   font-weight: 700;
   text-decoration: none;
   font-size: 1rem;
@@ -184,4 +170,15 @@ footer {
 .footer-instagram:hover {
   transform: translateY(-2px);
   opacity: 0.9;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .side-character {
+    display: none; /* Esconde imagem lateral em telas pequenas */
+  }
 }
