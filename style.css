@@ -1,4 +1,4 @@
-/* ================= RESET ================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,70 +6,59 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ================= BODY ================= */
+/* BODY */
 body {
   background: linear-gradient(to bottom, #0c1e3e, #051b3c);
   color: #fff;
   min-height: 100vh;
+}
+
+/* WRAPPER PRINCIPAL */
+.main-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   padding: 2rem;
-  position: relative;
 }
 
-/* ================= PERSONAGEM LATERAL ================= */
-.side-character {
-  position: absolute;
-  left: -50px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.character-large {
-  max-width: 350px;
-  width: 100%;
-}
-
-/* ================= CONTAINER ================= */
-.container {
-  max-width: 900px;
+/* FLEX CONTAINER */
+.content-wrapper {
+  display: flex;
   background: rgba(10, 25, 50, 0.95);
-  padding: 2rem 3rem;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  padding: 2rem 3rem;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  align-items: center; /* centraliza verticalmente */
+  gap: 2rem;
 }
 
-/* ================= LOGO ================= */
+/* TEXTO */
+.text-section {
+  flex: 1;
+  text-align: left;
+}
+
+/* LOGO */
 .logo-top img {
   max-width: 200px;
   margin-bottom: 2rem;
 }
 
 .logo {
-  text-align: center;
   font-weight: 700;
   font-size: 1.4rem;
   letter-spacing: 2px;
   color: white;
   margin-bottom: 2rem;
-  position: relative;
 }
 
 .logo .x {
   color: red;
   font-weight: 900;
-  margin-left: 5px;
-  position: relative;
-  top: -2px;
-  font-size: 1.5rem;
 }
 
-/* ================= TÍTULOS ================= */
+/* H1 */
 h1 {
   font-size: 2.5rem;
   font-weight: 900;
@@ -82,18 +71,19 @@ h1 {
   text-transform: uppercase;
 }
 
-/* ================= DESCRIÇÃO ================= */
+/* DESCRIÇÃO */
 .desc {
   font-size: 1rem;
   color: #ddd;
   margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 1.5;
 }
 
-/* ================= BOTÕES ================= */
+/* BOTÕES */
+.buttons {
+  margin-bottom: 2rem;
+}
+
 .btn-red {
   display: inline-block;
   background: #ff3b3b;
@@ -103,18 +93,16 @@ h1 {
   padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 5px 15px rgba(255, 59, 59, 0.5);
+  margin-right: 0.5rem;
   transition: all 0.3s ease;
-  margin: 0.5rem;
 }
 
 .btn-red:hover {
   background: #ff5757;
-  box-shadow: 0 8px 20px rgba(255, 59, 59, 0.7);
   transform: translateY(-2px);
 }
 
-/* ================= BENEFÍCIOS ================= */
+/* BENEFÍCIOS */
 .benefits {
   list-style: none;
   margin: 2rem 0;
@@ -137,7 +125,18 @@ h1 {
   fill: #4caf50;
 }
 
-/* ================= FOOTER ================= */
+/* IMAGEM */
+.image-section {
+  flex: 0 0 300px; /* largura fixa */
+  text-align: center;
+}
+
+.character-large {
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+/* FOOTER */
 footer {
   margin-top: 60px;
   padding: 30px 0;
@@ -146,9 +145,6 @@ footer {
   border-top: 1px solid #1e2744;
   background: rgba(17, 24, 46, 0.9);
   width: 100%;
-  clear: both;
-  position: relative;
-  z-index: 1;
 }
 
 .footer-text {
@@ -172,13 +168,14 @@ footer {
   opacity: 0.9;
 }
 
-/* ================= RESPONSIVIDADE ================= */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
+  .content-wrapper {
+    flex-direction: column-reverse; /* Imagem embaixo do texto */
+    text-align: center;
   }
 
-  .side-character {
-    display: none; /* Esconde imagem lateral em telas pequenas */
+  .image-section {
+    margin-bottom: 2rem;
   }
 }
