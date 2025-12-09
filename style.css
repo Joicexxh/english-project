@@ -5,23 +5,32 @@
   font-family: 'Poppins', sans-serif;
 }
 
+:root {
+  --accent: #ff3b3b;
+  --dark: #0c1e3e;
+  --dark2: #051b3c;
+  --muted: #b4b9c9;
+  --text-light: #fff;
+}
+
 body {
   background: linear-gradient(to bottom, #0c1e3e, #051b3c);
-  color: #fff;
+  color: var(--text-light);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
   position: relative;
+  flex-direction: column; /* permite footer no final */
 }
 
 /* ================= Personagem lateral ================= */
 .side-character {
   position: absolute;
   left: -50px;
-   bottom: 50px;
-    z-index: 10;
+  bottom: 150px; /* afasta do footer */
+  z-index: 2;
 }
 
 .character-large {
@@ -47,6 +56,25 @@ body {
   margin-bottom: 2rem;
 }
 
+.logo .x {
+  color: red;
+  font-weight: 900;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
+  font-size: 1.5rem;
+}
+
+.logo {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: white;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
 /* ================= Títulos ================= */
 h1 {
   font-size: 2.5rem;
@@ -56,7 +84,7 @@ h1 {
 }
 
 .highlight {
-  color: #ff3b3b;
+  color: var(--accent);
   text-transform: uppercase;
 }
 
@@ -74,7 +102,7 @@ h1 {
 /* ================= Botões ================= */
 .btn-red {
   display: inline-block;
-  background: #ff3b3b;
+  background: var(--accent);
   color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
@@ -122,25 +150,9 @@ h1 {
     display: none;
   }
 }
-.logo .x {
-  color: red;
-  font-weight: 900;
-  margin-left: 5px;
-  position: relative;
-  top: -2px;
-  font-size: 1.5rem;
-}
-/* Logo */
-.logo {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 2px;
-  color: white;
-  margin-bottom: 2rem;
-  position: relative;
-  
- footer {
+
+/* ================= Footer ================= */
+footer {
   margin-top: 60px;
   padding: 30px 0;
   text-align: center;
@@ -148,8 +160,8 @@ h1 {
   border-top: 1px solid #1e2744;
   background: var(--dark2);
   width: 100%;
-  clear: both;       /* garante que não fique ao lado de elementos flutuantes */
-  position: relative; /* evita que fique sobreposto */
+  clear: both;
+  position: relative;
   z-index: 1;
 }
 
